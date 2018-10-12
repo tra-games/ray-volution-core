@@ -10,14 +10,12 @@ const ESM2015_DIR = `${BUILD}/esm2015`;
 const ESM5_DIR = `${BUILD}/esm5`;
 const OUT_DIR_ESM5 = `${BUILD}/package/esm5`;
 const BUNDLES_DIR = `${BUILD}/bundles`;
-const RELEASE = 'dist';
 
 // const modules = ['.'];
 const modules = ['resources'];
 
 shell.rm(`-Rf`, `${FROM}`);
 shell.rm(`-Rf`, `${BUILD}`);
-shell.rm(`-Rf`, `${RELEASE}`);
 
 shell.mkdir(`-p`, `./${FROM}`);
 
@@ -26,7 +24,6 @@ shell.cp('-R', `${SOURCE}/*`, `${FROM}`);
 shell.mkdir(`-p`, `./${ESM2015_DIR}`);
 shell.mkdir(`-p`, `./${ESM5_DIR}`);
 shell.mkdir(`-p`, `./${BUNDLES_DIR}`);
-shell.mkdir(`-p`, `./${RELEASE}`);
 
 /* TSLint with Codelyzer */
 // https://github.com/palantir/tslint/blob/master/src/configs/recommended.ts
@@ -91,12 +88,12 @@ for (const module of modules) {
 for (const module of modules) {
   shell.rm(`-Rf`, `${BUILD}/${module}/**/*.js`);
   shell.rm(`-Rf`, `${BUILD}/${module}/**/*.js.map`);
-  shell.mv(`${BUILD}/${module}`, `${RELEASE}/${module}`);
+  shell.mv(`${BUILD}/${module}`, `${module}`);
 }
 
-shell.mv(`${ESM2015_DIR}`, `${RELEASE}`);
-shell.mv(`${ESM5_DIR}`, `${RELEASE}`);
-shell.mv(`${BUNDLES_DIR}`, `${RELEASE}`);
+shell.mv(`${ESM2015_DIR}`, `.`);
+shell.mv(`${ESM5_DIR}`, `.`);
+shell.mv(`${BUNDLES_DIR}`, `.`);
 
 shell.rm(`-Rf`, `${FROM}`);
 shell.rm(`-Rf`, `${BUILD}`);

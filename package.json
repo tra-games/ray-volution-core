@@ -1,6 +1,6 @@
 {
   "name": "@ray-volution/core",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "index.js",
   "scripts": {
     "test": "rm -rf dist && tsc -p tsconfig.spec.json && TZ=UTC NODE_ENV=test istanbul cover dist/test.js",
@@ -18,7 +18,10 @@
   "homepage": "https://github.com/tra-games/ray-volution-core#readme",
   "description": "",
   "files": [
-    "dist"
+    "bundles",
+    "esm5",
+    "esm2015",
+    "resources"
   ],
   "dependencies": {
     "lodash": "4.17.11",
