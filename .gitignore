@@ -16,3 +16,12 @@ node_modules/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+resources
+coverage
+bundles
+esm5
+esm2015
+src
+tools
+builds.js

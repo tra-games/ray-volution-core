@@ -21,6 +21,10 @@ shell.mkdir(`-p`, `./${FROM}`);
 
 shell.cp('-R', `${SOURCE}/*`, `${FROM}`);
 
+shell.rm(`-Rf`, `./${ESM2015_DIR}`);
+shell.rm(`-Rf`, `./${ESM5_DIR}`);
+shell.rm(`-Rf`, `./${BUNDLES_DIR}`);
+
 shell.mkdir(`-p`, `./${ESM2015_DIR}`);
 shell.mkdir(`-p`, `./${ESM5_DIR}`);
 shell.mkdir(`-p`, `./${BUNDLES_DIR}`);
@@ -33,6 +37,8 @@ shell.exec(`node_modules/.bin/tslint -p tslint.json -t stylish src/**/*.ts`);
 shell.echo(chalk.green(`TSLint completed`));
 
 const build = (module) => {
+  shell.rm(`-Rf`, `./${module}`);
+
   const prefix = '../';
   const prefixN2 = '../../';
   const rollup = 'node_modules/.bin/rollup';
