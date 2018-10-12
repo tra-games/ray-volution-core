@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/tra-games/ray-volution-core#readme",
   "description": "",
+  "files": [
+    "src"
+  ],
   "dependencies": {
     "lodash": "4.17.11",
     "moment": "2.22.2"
