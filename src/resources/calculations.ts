@@ -9,5 +9,5 @@ export function calculateResource(
   from: Moment,
   to: Moment = _moment(),
 ): number {
-  return x0 + v * to.diff(from, 's');
+  return Math.round(x0 + v * to.diff(from, 'ms') / 1000);
 }
