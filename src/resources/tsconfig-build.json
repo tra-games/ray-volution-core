@@ -1,0 +1,7 @@
+{
+  "extends": "../tsconfig-build",
+  "files": [
+    "public_api.ts",
+    "index.ts"
+  ]
+}

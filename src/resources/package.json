@@ -1,0 +1,7 @@
+{
+  "name": "@ray-volution/core/resources",
+  "typings": "./index.d.ts",
+  "main": "../bundles/resources.umd.js",
+  "module": "../esm5/resources.js",
+  "es2015": "../esm2015/resources.js"
+}
